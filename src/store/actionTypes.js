@@ -1,0 +1,2 @@
+export const SEARCH_REQUEST = "SEARCH_REQUEST";
+export const NEXT_PAGE_REQUEST = "NEXT_PAGE_REQUEST";
