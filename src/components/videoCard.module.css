@@ -5,17 +5,15 @@
 }
 .videoCard_wrap {
   width: 20%;
-  height: 80vh;
+  height: 60vh;
   transition: 0.5s;
 }
 .videoCard {
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
   width: 350px;
   height: 100%;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
 }
 
 .front,
@@ -27,30 +25,34 @@
   position: absolute;
   backface-visibility: hidden;
   border-radius: 10px;
-  border: 2px solid black;
+  border: 2px solid #89c9b8;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #596e79;
 }
-.front {
-  background-color: darkgray;
-}
-.back {
-  background-color: darkkhaki;
-}
-/* .front {
-  transform: perspective(600px) rotateY(0deg);
-  background: burlywood;
-}
-.back {
-  transform: perspective(600px) rotateY(180deg);
-  background: cornsilk;
-} */
 
-/* .videoCard:hover > .front {
-  transform: perspective(600px) rotateY(-180deg);
+a {
+  display: block;
 }
-.videoCard:hover > .back {
-  transform: perspective(600px) rotateY(0deg);
-} */
+img {
+  width: 100%;
+}
 
-/* button [id="toBack"]:checked >.front {
-  transform: perspective(600px) rotateY(-180deg);
-} */
+#toBack,
+#toFront {
+  height: 30px;
+  width: 100%;
+  border-top: 2px solid #89c9b8;
+  background-color: #092532;
+  color: #89c9b8;
+  font-size: 16px;
+  outline: none;
+  transition-duration: 0.1s;
+}
+
+#toBack:active,
+#toFront:active {
+  background-color: #89c9b8;
+  color: #092532;
+}

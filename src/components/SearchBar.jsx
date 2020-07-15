@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styles from "./searchBar.module.css";
 
 export function SearchBar({ searchRequest }) {
   const [input, setInput] = useState("");
@@ -7,7 +8,7 @@ export function SearchBar({ searchRequest }) {
     setInput("");
   }
   return (
-    <div className="searchBar_wrap">
+    <div className={styles.searchBar_wrap}>
       <input
         type="text"
         value={input}
@@ -15,7 +16,7 @@ export function SearchBar({ searchRequest }) {
           setInput(e.target.value);
         }}
       />
-      <button onClick={() => Search()}>search</button>
+      <button id={styles.search} onClick={() => Search()}>search</button>
     </div>
   );
 }

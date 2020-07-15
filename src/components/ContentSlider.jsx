@@ -26,11 +26,11 @@ export function ContentSlider({ items, stats, nextPageRequest }) {
           />
         ))}
       </div>
-      <div>
-        <button id="goLeft" onClick={goLeft}>
+      <div className={styles.buttons}>
+        <button id={styles.goLeft} onClick={goLeft}>
           left
         </button>
-        <button id="goRight" onClick={goRight}>
+        <button id={styles.goRight} onClick={goRight}>
           right
         </button>
       </div>

@@ -4,14 +4,20 @@
   box-sizing: border-box;
 }
 
+body {
+  background: #092532;
+}
+
 .clientComponent_wrap {
   overflow: hidden;
 }
 .logo {
   padding: 20px;
+  font-size: 32px;
+  color: #89c9b8;
 }
 .my {
-  color: red;
+  font-size: 32px;
 }
 .tube {
   text-transform: uppercase;

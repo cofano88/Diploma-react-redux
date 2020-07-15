@@ -32,9 +32,11 @@ export function VideoCard({ item, stats, x, index }) {
           <a href={link} target="_blank" rel="noopener noreferrer">
             <img src={item.snippet.thumbnails.medium.url} alt="" />
           </a>
-          <div>{item.snippet.title}</div>
-          <div>description: {item.snippet.description}</div>
-          <button id="toBack" onClick={toBack}>
+          <div className={styles.title}>{item.snippet.title}</div>
+          <div className={styles.description}>
+            description: {item.snippet.description}
+          </div>
+          <button id={styles.toBack} onClick={toBack}>
             statictics
           </button>
         </div>
@@ -43,13 +45,13 @@ export function VideoCard({ item, stats, x, index }) {
           id="back"
           style={{ transform: backTransform }}
         >
-          <button id="toFront" onClick={toFront}>
-            back
-          </button>
           <div>view count: {stats[index].statistics.viewCount}</div>
           <div>like count: {stats[index].statistics.likeCount}</div>
           <div>dislike count: {stats[index].statistics.dislikeCount}</div>
           <div>comment count: {stats[index].statistics.commentCount}</div>
+          <button id={styles.toFront} onClick={toFront}>
+            back
+          </button>
         </div>
       </div>
     </div>

@@ -11,7 +11,6 @@ export const searchRequest = (search) => {
 
     const lastSearch = search;
     const dataObj = await resp.json();
-    console.log(dataObj);
     let data = dataObj.items;
     const nextPage = dataObj.nextPageToken;
     const videoIdArr = data.map((item) => item.id.videoId);
