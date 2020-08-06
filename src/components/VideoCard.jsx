@@ -1,59 +1,42 @@
-import React, { useState } from "react";
-import styles from "./videoCard.module.css";
+import React, { useState } from 'react'
+import styles from './videoCard.module.css'
 export function VideoCard({ item, stats, x, index }) {
-  const [frontTransform, setFrontTransform] = useState(
-    "perspective(600px) rotateY(0deg)"
-  );
-  const [backTransform, setBackTransform] = useState(
-    "perspective(600px) rotateY(180deg)"
-  );
+	const [frontTransform, setFrontTransform] = useState('perspective(600px) rotateY(0deg)')
+	const [backTransform, setBackTransform] = useState('perspective(600px) rotateY(180deg)')
 
-  const link = "https://www.youtube.com/watch?v=" + item.id.videoId;
-  const toBack = () => {
-    setFrontTransform("perspective(600px) rotateY(-180deg)");
-    setBackTransform("perspective(600px) rotateY(0deg)");
-  };
-  const toFront = () => {
-    setFrontTransform("perspective(600px) rotateY(0deg)");
-    setBackTransform("perspective(600px) rotateY(180deg)");
-  };
+	const link = 'https://www.youtube.com/watch?v=' + item.id.videoId
+	const toBack = () => {
+		setFrontTransform('perspective(600px) rotateY(-180deg)')
+		setBackTransform('perspective(600px) rotateY(0deg)')
+	}
+	const toFront = () => {
+		setFrontTransform('perspective(600px) rotateY(0deg)')
+		setBackTransform('perspective(600px) rotateY(180deg)')
+	}
 
-  return (
-    <div
-      style={{ transform: `translateX(${x}%)` }}
-      className={styles.videoCard_wrap}
-    >
-      <div className={styles.videoCard}>
-        <div
-          className={styles.front}
-          id="front"
-          style={{ transform: frontTransform }}
-        >
-          <a href={link} target="_blank" rel="noopener noreferrer">
-            <img src={item.snippet.thumbnails.medium.url} alt="" />
-          </a>
-          <div className={styles.title}>{item.snippet.title}</div>
-          <div className={styles.description}>
-            description: {item.snippet.description}
-          </div>
-          <button id={styles.toBack} onClick={toBack}>
-            statictics
-          </button>
-        </div>
-        <div
-          className={styles.back}
-          id="back"
-          style={{ transform: backTransform }}
-        >
-          <div>view count: {stats[index].statistics.viewCount}</div>
-          <div>like count: {stats[index].statistics.likeCount}</div>
-          <div>dislike count: {stats[index].statistics.dislikeCount}</div>
-          <div>comment count: {stats[index].statistics.commentCount}</div>
-          <button id={styles.toFront} onClick={toFront}>
-            back
-          </button>
-        </div>
-      </div>
-    </div>
-  );
+	return (
+		<div style={{ transform: `translateX(${x}%)` }} className={styles.videoCard_wrap}>
+			<div className={styles.videoCard}>
+				<div className={styles.front} id='front' style={{ transform: frontTransform }}>
+					<a href={link} target='_blank' rel='noopener noreferrer'>
+						<img src={item.snippet.thumbnails.medium.url} alt='' />
+					</a>
+					<div className={styles.title}>{item.snippet.title}</div>
+					<div className={styles.description}>description: {item.snippet.description}</div>
+					<button id={styles.toBack} onClick={toBack}>
+						statictics
+					</button>
+				</div>
+				<div className={styles.back} id='back' style={{ transform: backTransform }}>
+					<div>view count: {stats[index].statistics.viewCount}</div>
+					<div>like count: {stats[index].statistics.likeCount}</div>
+					<div>dislike count: {stats[index].statistics.dislikeCount}</div>
+					<div>comment count: {stats[index].statistics.commentCount}</div>
+					<button id={styles.toFront} onClick={toFront}>
+						back
+					</button>
+				</div>
+			</div>
+		</div>
+	)
 }

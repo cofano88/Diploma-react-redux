@@ -1,58 +1,66 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 .videoCard_wrap {
-  width: 20%;
-  height: 60vh;
-  transition: 0.5s;
+	width: 20%;
+	height: 60vh;
+	transition: 0.5s;
 }
 .videoCard {
-  width: 350px;
-  height: 100%;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
+	width: 350px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
 }
 
 .front,
 .back {
-  width: 100%;
-  height: 100%;
-  transition: transform 0.5s linear;
-  overflow: hidden;
-  position: absolute;
-  backface-visibility: hidden;
-  border-radius: 10px;
-  border: 2px solid #89c9b8;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: #596e79;
+	color: #89c9b8;
+	font-size: 16px;
+	width: 100%;
+	height: 100%;
+	transition: transform 0.5s linear;
+	overflow: hidden;
+	position: absolute;
+	backface-visibility: hidden;
+	border-radius: 10px;
+	border: 2px solid #89c9b8;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: #092532;
+	text-align: center;
+}
+
+.back > div {
+	padding-top: 45px;
+	font-size: 18px;
 }
 
 a {
-  display: block;
+	display: block;
 }
 img {
-  width: 100%;
+	width: 100%;
 }
 
 #toBack,
 #toFront {
-  height: 30px;
-  width: 100%;
-  border-top: 2px solid #89c9b8;
-  background-color: #092532;
-  color: #89c9b8;
-  font-size: 16px;
-  outline: none;
-  transition-duration: 0.1s;
+	height: 30px;
+	width: 100%;
+	border-top: 2px solid #89c9b8;
+	background-color: #092532;
+	color: #89c9b8;
+	font-size: 16px;
+	outline: none;
+	transition-duration: 0.1s;
+	cursor: pointer;
 }
 
 #toBack:active,
 #toFront:active {
-  background-color: #89c9b8;
-  color: #092532;
+	background-color: #89c9b8;
+	color: #092532;
 }
